@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FAQ - Development Community">
+    <title>FAQ | Development Community</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .faq-question {
+            background: var(--bg-secondary);
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .faq-question:hover {
+            background: var(--bg-tertiary);
+        }
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            padding: 20px;
+            background: var(--bg-primary);
+            display: none;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header class="header">
+        <h1>Development Community</h1>
+        <img src="images/image.png" alt="DevCommu Logo" class="logo">
+        <nav class="navigation" aria-label="Navigation principale">
+            <ul>
+                <li><a href="index.html#accueil">Accueil</a></li>
+                <li><a href="index.html#apropos">À propos</a></li>
+                <li><a href="index.html#projets">Projets</a></li>
+                <li><a href="index.html#evenements">Événements</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="padding: 60px 40px; max-width: 900px; margin: 0 auto;">
+        <h1>Foire Aux Questions (FAQ)</h1>
+        <p style="color: var(--text-secondary); margin-bottom: 40px;">Trouvez les réponses aux questions fréquemment posées sur Development Community.</p>
+
+        <div class="faq-item active">
+            <div class="faq-question">
+                <span>Comment rejoindre la communauté ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>C'est très simple ! Rejoignez notre serveur Discord en cliquant sur le lien d'invitation disponible sur notre page d'accueil. Une fois sur le serveur, bienvenue ! N'hésitez pas à te présenter dans le salon approprié.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Y a-t-il des frais pour rejoindre ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Non, Development Community est 100% gratuite ! L'adhésion, l'accès à tous les salons et la participation aux événements sont complètement gratuits.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Quels sont les salons disponibles ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Nous avons plus de 100 salons thématiques couvrant différents domaines : développement web, mobile, DevOps, design, apprentissage et bien d'autres. Vous trouverez certainement un salon adapté à vos intérêts !</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Comment devenir modérateur ou membre de l'équipe ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Vous pouvez postuler pour rejoindre l'équipe via le formulaire de contact sur notre page d'accueil. Sélectionnez le rôle qui vous intéresse (Modérateur, Community Manager, Administrateur ou Middle Man) et nous examinerons votre candidature.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Existe-t-il des règles de comportement ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Oui, nous avons des règles de communauté pour assurer un environnement respectueux et inclusif. Consultez nos Conditions d'Utilisation pour plus de détails. En résumé : respectez les autres, ne faites pas de spam, et maintenez un ton bienveillant.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Comment signaler un problème ou un abus ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Si vous rencontrez un problème ou un comportement inapproprié, signalez-le directement aux modérateurs via un message privé ou contactez-nous à developmentcommunity@gmail.com.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Y a-t-il des événements réguliers ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Oui ! Nous organisons régulièrement des sessions live, des AMA (Ask Me Anything), des concours de code et des présentations. Suivez notre serveur Discord pour ne rater aucun événement.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Comment trouver un mentor ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Rendez-vous dans le salon "mentorat" de notre Discord où vous pouvez vous présenter et chercher quelqu'un qui pourrait vous guider. De nombreux développeurs expérimentés sont heureux d'aider les débutants.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Puis-je partager mes projets ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Absolument ! Nous encourageons le partage de projets, de code et de portfolios. Rendez-vous dans le salon "projets-showcase" pour présenter votre travail et obtenir des retours constructifs de la communauté.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Puis-je quitter la communauté à tout moment ?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Bien sûr ! Vous pouvez quitter notre Discord à tout moment sans obligation. Nous espérons juste que vous aurez apprécié votre expérience et que vous reviendrez nous voir ! 💙</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border-color); text-align: center;">
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">Vous n'avez pas trouvé votre réponse ?</p>
+            <a href="support.html" class="btn btn-primary">Contacter le Support</a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Development Community</h4>
+                <p>Plateforme collaborative pour développeurs passionnés du monde entier.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#apropos">À propos</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Communauté</h4>
+                <ul>
+                    <li><a href="https://discord.gg/rYu9bjKP" target="_blank">Discord</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="confidentialite.html">Confidentialité</a></li>
+                    <li><a href="conditions.html">Conditions d'Utilisation</a></li>
+                    <li><a href="mentions-legales.html">Mentions Légales</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Development Community. Tous droits réservés. | Conçu avec 💙 pour les développeurs</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

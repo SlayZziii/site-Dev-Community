@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support - Development Community">
+    <title>Support | Development Community</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header class="header">
+        <h1>Development Community</h1>
+        <img src="images/image.png" alt="DevCommu Logo" class="logo">
+        <nav class="navigation" aria-label="Navigation principale">
+            <ul>
+                <li><a href="index.html#accueil">Accueil</a></li>
+                <li><a href="index.html#apropos">À propos</a></li>
+                <li><a href="index.html#projets">Projets</a></li>
+                <li><a href="index.html#evenements">Événements</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="padding: 60px 40px; max-width: 900px; margin: 0 auto;">
+        <h1>Centre de Support</h1>
+        <p style="color: var(--text-secondary); margin-bottom: 50px;">Nous sommes là pour vous aider ! Contactez-nous par la méthode qui vous convient le mieux.</p>
+
+        <!-- Support Methods -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 60px;">
+            <!-- Discord Support -->
+            <div style="background: var(--bg-secondary); padding: 30px; border-radius: 12px; border: 1px solid var(--border-color);">
+                <h3 style="margin-top: 0;">
+                    <i class="fab fa-discord" style="color: #5865F2; margin-right: 10px;"></i>Support Discord
+                </h3>
+                <p style="color: var(--text-secondary);">Obtenez une réponse rapide de notre équipe et de la communauté.</p>
+                <ul style="list-style: none; padding: 0; font-size: 0.95em; color: var(--text-secondary);">
+                    <li style="margin-bottom: 10px;">✓ Réponse immédiate</li>
+                    <li style="margin-bottom: 10px;">✓ Chat direct en direct</li>
+                    <li style="margin-bottom: 10px;">✓ Support 24h/24, 7j/7</li>
+                </ul>
+                <a href="https://discord.gg/rYu9bjKP" target="_blank" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">Rejoindre Discord</a>
+            </div>
+
+            <!-- Email Support -->
+            <div style="background: var(--bg-secondary); padding: 30px; border-radius: 12px; border: 1px solid var(--border-color);">
+                <h3 style="margin-top: 0;">
+                    <i class="fas fa-envelope" style="color: #0066ff; margin-right: 10px;"></i>Support Email
+                </h3>
+                <p style="color: var(--text-secondary);">Envoyez-nous un email pour une demande formelle ou détaillée.</p>
+                <ul style="list-style: none; padding: 0; font-size: 0.95em; color: var(--text-secondary);">
+                    <li style="margin-bottom: 10px;">✓ Réponse dans les 24h</li>
+                    <li style="margin-bottom: 10px;">✓ Traçabilité complète</li>
+                    <li style="margin-bottom: 10px;">✓ Documentation écrite</li>
+                </ul>
+                <a href="mailto:developmentcommunity@gmail.com" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">Envoyer un Email</a>
+            </div>
+        </div>
+
+        <!-- Support Form -->
+        <div style="background: var(--bg-secondary); padding: 40px; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 40px;">
+            <h2 style="margin-top: 0;">Formulaire de Support</h2>
+            <p style="color: var(--text-secondary);">Remplissez ce formulaire et nous vous répondrons rapidement.</p>
+            
+            <form class="contact-form" onsubmit="handleSupportSubmit(event)">
+                <div class="form-group">
+                    <label for="support-name">Nom Complet</label>
+                    <input type="text" id="support-name" name="name" required placeholder="Votre nom">
+                </div>
+
+                <div class="form-group">
+                    <label for="support-email">Adresse Email</label>
+                    <input type="email" id="support-email" name="email" required placeholder="votre@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="support-username">Nom d'utilisateur Discord (optionnel)</label>
+                    <input type="text" id="support-username" name="discord_username" placeholder="VotreNom#1234">
+                </div>
+
+                <div class="form-group">
+                    <label for="support-category">Catégorie du Problème</label>
+                    <select id="support-category" name="category" required>
+                        <option value="">-- Sélectionnez une catégorie --</option>
+                        <option value="technical">Problème Technique</option>
+                        <option value="account">Problème de Compte</option>
+                        <option value="moderation">Signalement de Modération</option>
+                        <option value="feature">Demande de Fonctionnalité</option>
+                        <option value="bug">Signaler un Bug</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="support-priority">Priorité</label>
+                    <select id="support-priority" name="priority" required>
+                        <option value="">-- Sélectionnez une priorité --</option>
+                        <option value="low">Basse - Je peux attendre</option>
+                        <option value="medium">Moyen - C'est important</option>
+                        <option value="high">Haute - C'est urgent</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="support-message">Décrivez Votre Problème</label>
+                    <textarea id="support-message" name="message" rows="8" required placeholder="Soyez aussi détaillé que possible..."></textarea>
+                    <p style="font-size: 0.85em; color: var(--text-secondary); margin-top: 8px;">
+                        <i class="fas fa-info-circle"></i> Plus vous fournissez de détails, plus vite nous pourrons vous aider.
+                    </p>
+                </div>
+
+                <button type="submit" class="btn btn-submit">Envoyer la Demande de Support</button>
+                <p class="form-notice">Minimum requis pour une réponse : Nous vous contacterons dans les 24 heures.</p>
+            </form>
+        </div>
+
+        <!-- FAQ Link -->
+        <div style="background: var(--bg-secondary); padding: 30px; border-radius: 12px; border: 1px solid var(--border-color); text-align: center;">
+            <h3 style="margin-top: 0;">Avant de contacter le support...</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">Avez-vous consulté notre FAQ ? Vous y trouverez peut-être la réponse rapidement.</p>
+            <a href="faq.html" class="btn btn-primary">Consulter la FAQ</a>
+        </div>
+
+        <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border-color); text-align: center;">
+            <a href="index.html" class="btn btn-primary">Retour à l'accueil</a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Development Community</h4>
+                <p>Plateforme collaborative pour développeurs passionnés du monde entier.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#apropos">À propos</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Communauté</h4>
+                <ul>
+                    <li><a href="https://discord.gg/rYu9bjKP" target="_blank">Discord</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="confidentialite.html">Confidentialité</a></li>
+                    <li><a href="conditions.html">Conditions d'Utilisation</a></li>
+                    <li><a href="mentions-legales.html">Mentions Légales</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Development Community. Tous droits réservés. | Conçu avec 💙 pour les développeurs</p>
+        </div>
+    </footer>
+
+    <script>
+        // Support form submission
+        function handleSupportSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('support-name').value;
+            const email = document.getElementById('support-email').value;
+            const discord_username = document.getElementById('support-username').value;
+            const category = document.getElementById('support-category').value;
+            const priority = document.getElementById('support-priority').value;
+            const message = document.getElementById('support-message').value;
+            
+            // Créer l'email mailto
+            const subject = `[SUPPORT] ${category.toUpperCase()} - ${priority.toUpperCase()}`;
+            const body = `Nom: ${name}\nEmail: ${email}\nNom Discord: ${discord_username || 'Non fourni'}\nCatégorie: ${category}\nPriorité: ${priority}\n\nMessage:\n${message}`;
+            
+            const mailtoLink = `mailto:developmentcommunity@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Envoyer l'email
+            window.location.href = mailtoLink;
+            
+            // Réinitialiser le formulaire
+            document.querySelector('.contact-form').reset();
+        }
+
+        // Smooth scrolling pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
